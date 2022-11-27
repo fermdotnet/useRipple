@@ -1,6 +1,6 @@
 import { useEffect, RefObject } from 'react';
 
-const RIPPLING_TIME = 600;
+const RIPPLING_TIME = 750;
 
 export default function useRipple(ref: RefObject<HTMLElement | null>, ripplingTime: number = RIPPLING_TIME) {
   useEffect(() => {

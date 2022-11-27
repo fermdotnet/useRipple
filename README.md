@@ -2,7 +2,7 @@
 
 ### Demo (Codepen)
 
---
+https://codepen.io/ferdotnet/pen/gOKKxNr
 
 ### Install
 
@@ -12,9 +12,18 @@
 
 ```
 import React from 'react';
-import useForwardedRef from '@ferdotnet/use-ripple';
+import useRipple from '@ferdotnet/use-ripple';
 
 export default () => {
-    ------
+    const ref = useRef(null);
+    useRipple(ref);
+
+    return <button ref={ref}>Click me</button>;
 };
 ```
+
+#### Also import the styles:
+
+```@import '~@ferdotnet/use-ripple/styles';``` 
+
+or check the codepen link for custom styles.
