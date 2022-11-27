@@ -1,6 +1,6 @@
 {
   "name": "@ferdotnet/use-ripple",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -12,9 +12,10 @@
   "author": "Fernando Munoz <munioz.fernando@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn build:esm && yarn build:cjs",
+    "build": "yarn build:esm && yarn build:cjs && yarn styles",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "styles": "ncp src/styles.scss lib/styles.scss && node-sass lib -o lib",
     "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
@@ -22,6 +23,8 @@
   },
   "devDependencies": {
     "@types/react": "^17.0.40",
+    "ncp": "^2.0.0",
+    "node-sass": "^8.0.0",
     "typescript": "^4.6.2"
   },
   "files": [

@@ -1,0 +1,31 @@
+.rippling {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: rgba(#000, .1);
+    display: block;
+    border-radius: 9999px;
+    opacity: 1;
+    animation: .6s ease-out 1 forwards ripple-effect;
+  }
+}
+
+@keyframes ripple-effect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(10);
+    opacity: .375;
+  }
+  100% {
+    transform: scale(35);
+    opacity: 0;
+  }
+}
